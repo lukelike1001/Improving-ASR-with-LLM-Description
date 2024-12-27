@@ -42,7 +42,7 @@ if __name__ == '__main__':
     # data collator  
     data_collator = DataCollatorSpeechS2SWhitPadding(processor=processor)
     
-    data_root = "/data/jwsuh/whisper-datasets/main"
+    data_root = ""
     
     if args.dataset == 'earning':
         data_train = PromptWhisperDataset(base_path=os.path.join(data_root,"Earnings_Call/"), phase='train', feature_extractor=feature_extractor, audio_type=".mp3", tokenizer=tokenizer, prompt=args.prompt, random=args.random)
@@ -53,6 +53,11 @@ if __name__ == '__main__':
         data_train = PromptWhisperDataset(base_path=os.path.join(data_root,"ocw/"), phase='train', feature_extractor=feature_extractor, audio_type=".mp3", tokenizer=tokenizer, prompt=args.prompt, basic=args.basic, random=args.random)
         data_eval = PromptWhisperDataset(base_path=os.path.join(data_root,"ocw/"), phase='dev', feature_extractor=feature_extractor, audio_type=".mp3", tokenizer=tokenizer, prompt=args.prompt, basic=args.basic)
         data_test = PromptWhisperDataset(base_path=os.path.join(data_root,"ocw/"), phase='test', feature_extractor=feature_extractor, audio_type=".mp3", tokenizer=tokenizer, prompt=args.prompt, basic=args.basic)
+    
+    elif args.dataset == 'aerial':
+        data_train = PromptWhisperDataset(base_path=os.path.join(data_root,"aerial/"), phase='train', feature_extractor=feature_extractor, audio_type=".wav", tokenizer=tokenizer, prompt=args.prompt, basic=args.basic, random=args.random)
+        data_eval = PromptWhisperDataset(base_path=os.path.join(data_root,"aerial/"), phase='dev', feature_extractor=feature_extractor, audio_type=".wav", tokenizer=tokenizer, prompt=args.prompt, basic=args.basic)
+        data_test = PromptWhisperDataset(base_path=os.path.join(data_root,"aerial/"), phase='test', feature_extractor=feature_extractor, audio_type=".wav", tokenizer=tokenizer, prompt=args.prompt, basic=args.basic)
 
     else:
         raise ValueError("Wrong dataset")
@@ -88,8 +93,12 @@ if __name__ == '__main__':
 
     iteration_steps = int(len(data_train) * args.epoch // args.batch)
 
-    eval_step = int((len(data_train) // 2) // args.batch)
-    log_step = int((len(data_train) // 50) // args.batch)
+    # eval_step = int((len(data_train) // 2) // args.batch)
+    # log_step = int((len(data_train) // 50) // args.batch)
+
+    # Hard coded for evaluation
+    eval_step = max(1, int((len(data_train) // 2) // args.batch))
+    log_step = max(1, int((len(data_train) // 50) // args.batch))
 
     print("Train data len:", len(data_train))
     print("Eval data len:", len(data_eval))
@@ -113,7 +122,7 @@ if __name__ == '__main__':
         warmup_steps=100,
         max_steps=iteration_steps,
         gradient_checkpointing=True,
-        fp16=True,
+        fp16=torch.cuda.is_available(),
         evaluation_strategy="steps",
         per_device_eval_batch_size=1,
         predict_with_generate=True,
@@ -141,11 +150,11 @@ if __name__ == '__main__':
         compute_metrics=compute_wer,
         tokenizer=processor.feature_extractor,
     )
-
-    if not args.eval:
-        print("Start Training!")
-        # trainer.train(resume_from_checkpoint = True) # if needed
-        trainer.train()
+    
+    # if not args.eval:
+    #     print("Start Training!")
+    #     # trainer.train(resume_from_checkpoint = True) # if needed
+    #     trainer.train()
 
     print("Start Evaluation!!")
     if args.prompt:

@@ -1,0 +1,5 @@
+{
+	"text": "The recon RPA identified an ice storm—or maybe it was a nice, stable AO. Either way, CAS should proceed under the ROE. If hostile troops are ID'd, submit a 9-line CAS request. ATO lists all assets cleared for CAS along the FLOT near OBJ Eagle.",
+	"prompt": "The audio file may contain the following terminology, listed here for your convenience: ALR, RPA, RWR, ECM, IADS, AO, FLOT, GPS, FL, RTB, Zulu, ISR, PID, BDA, ATO, CAS, TOT, JTAC, IFF, TACAN, RPA, ID, CAS, ATO, FLOT, OBJ, AWACS",
+	"basic": "The audio file may contain the following terminology, listed here for your convenience: ALR, RPA, RWR, ECM, IADS, AO, FLOT, GPS, FL, RTB, Zulu, ISR, PID, BDA, ATO, CAS, TOT, JTAC, IFF, TACAN, RPA, ID, CAS, ATO, FLOT, OBJ, AWACS"
+}
