@@ -1,4 +1,42 @@
 # Improving-ASR-with-LLM-Description
+
+# Fork Details
+
+The forked version of the [Improving-ASR-with-LLM-Description](https://github.com/nickjw0205/Improving-ASR-with-LLM-Description) features air combat transcription tests, which can be accessed with the `--dataset aerial` tag. The `.wav` and `.json` files can be found under the `aerial` folder, with the predicted transcripted found under the `results` folder.
+
+Furthermore, testing was predominantly done on the `--basic` tag, as LLM-generated descriptions were not used for the air combat tests. An example script can be shown below.
+
+```
+## Use Collected Description
+python whisper_fine.py --dataset aerial --batch 32 --freeze --basic
+```
+
+The main changes to `whisper_fine.py` are as shown below. Lines 57-60 implement the new `aerial` dataset:
+
+```
+    elif args.dataset == 'aerial':
+        data_train = PromptWhisperDataset(base_path=os.path.join(data_root,"aerial/"), phase='train', feature_extractor=feature_extractor, audio_type=".wav", tokenizer=tokenizer, prompt=args.prompt, basic=args.basic, random=args.random)
+        data_eval = PromptWhisperDataset(base_path=os.path.join(data_root,"aerial/"), phase='dev', feature_extractor=feature_extractor, audio_type=".wav", tokenizer=tokenizer, prompt=args.prompt, basic=args.basic)
+        data_test = PromptWhisperDataset(base_path=os.path.join(data_root,"aerial/"), phase='test', feature_extractor=feature_extractor, audio_type=".wav", tokenizer=tokenizer, prompt=args.prompt, basic=args.basic)
+```
+
+Lines 99-101 ensure that the `eval_step` and `log_step` are not set to 0.
+
+```
+   # Hard coded for evaluation
+    eval_step = max(1, int((len(data_train) // 2) // args.batch))
+    log_step = max(1, int((len(data_train) // 50) // args.batch))
+```
+
+Lines 154-157 are **commented out** to ensure that only `evaluation` tests are run, since we are evaluating model performance without fine-tuning or training a model beforehand.
+
+```
+    # if not args.eval:
+    #     print("Start Training!")
+    #     # trainer.train(resume_from_checkpoint = True) # if needed
+    #     trainer.train()
+```
+
 --------------------------------------
 [[Paper]](https://www.isca-archive.org/interspeech_2024/suh24_interspeech.html)
 Accepted to INTERSPEECH 2024
