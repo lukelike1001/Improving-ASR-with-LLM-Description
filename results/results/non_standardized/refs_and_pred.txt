@@ -1,0 +1,27 @@
+Ref: 'isr assets confirm target at 35°15'n, 45°30'e,' said the jtac. 'cas is cleared hot,' added the awacs. pilots, remember: key your radios with the codeword 'raven.' ecm will jam at 1700 zulu; adjust ingress timing to meet tot at 1725.
+Pred:  isr assets confirmed target at 35-2-15-N, 45-30-E, said the jtac. Cas is cleared hot, added the awacs. Pilots, remember, key your radios with the code word raven. ecm will jam at 1700 zulu, adjust ingress timing to meet tot at 1725.
+
+Ref: the recon rpa identified an ice storm—or maybe it was a nice, stable ao. either way, cas should proceed under the roe. if hostile troops are id'd, submit a 9-line cas request. ato lists all assets cleared for cas along the flot near obj eagle.
+Pred:  the recon rpa identified an ice storm, or maybe it was a nice, stable ao, either way, cas should proceed under the roe. if hostile troops are id, submit a nine-line cas request. ato lists all assets cleared for cas along the flot near obj eagle.
+
+Ref: colonel maddox briefed on op thunderstrike, highlighting the e-8c jstars tracking mtis near obj falcon. captain hargrove noted terrain masking south of mount hesper may interfere with jtac comms. recalibrate iff and tacan if comms degrade.
+Pred:  Colonel Maddox briefed on Opie Thunderstrike, highlighting the E8C J-stars tracking MTIs near OBJ Falcon. Captain Hargrove noted terrain masking south of Mount Hesper may interfere with Jtac comms. Re-calibrate iff and tacan if comms degrade.
+
+Ref: maintain fl250, two-five-zero, and rtb by 1930 zulu. isr confirms ten-zero enemy movement at grid 43n753e. engage only with pid and confirm bda within two-four-hour cycles. ato specifies 4 cas sorties for tot at 1200 zulu, not fourteen hundred.
+Pred:  maintain fl250, 250, and rtb by 1930, zulu. isr confirms 10-0 enemy movement at grid 43 and 73e. Engage only with pid and confirm bda within two four hour cycles. Ato specifies four CS sorties for 1200, zulu, not 1400.
+
+Ref: we're taking a different route to minimize alr, ensuring rpa overwatch. they're checking their rwr and ecm systems to avoid triggering the iads. it's critical that we don't expose the ao during ingress. we've ensured all flot markers are accurate and synced with gps.
+Pred:  We're taking a different route to minimize alr, ensuring rpa overwatch. They're checking their rwr and ecm systems to avoid triggering the iads. It's critical that we don't expose the ao during ingress. We've ensured all flot markers are accurate and synced with gps.
+
+Ref: alright, uh, y'all listen up. we've got a couple jets ready for cas, so, uhhh, let's not waste time. isr reports enemy near the flot, but, uh, the ao's clear for now. if you see anything, hit your comms and, uh, confirm with the jtac before engaging, okay?
+Pred:  Alright, y'all listen up, we've got a couple jets ready for cas, so let's not waste time. ISR reports enemy near the flot, but the AO's clear for now. If you see anything, hit your comms and confirm with the JTAC before engaging, okay?
+
+Ref: sample transcript for f2t2tea: we have four enemy units to figure out f2t2s for. the expected ttg is going to be comprised of su-35s, j-11s, and possibly jh-7s. vaq-135, what do you have for that? we have three ea-18gs we can use for f2. great, then we'll put the ea-18gs on find and fix for the su-35s, and the e-7as in 2 sqn raaf for the j-11s. the vaq-141 can find the jh-7s if vaw-125 can then get a
+Pred:  sample transcript, we have four enemy units to figure out f2, 2s-4. The expected ttg is going to be comprised of su-35s, j-11s, and possibly jh-7s. vaq-135, what do you have for that? We have three ea-18g's we can use for f2. Great, then we'll put the ea-18g's on find and fix for the su-35s and the e7a's in two SQN RAF for the j-11s. The vaq-141 can find the jh-7s if v
+
+Ref: fix on them. vaw-125 can fix and track the jh-7s. still need someone to track the j-11s. 7fs can do that. sample transcript for f2t2tea: okay, what kind of firepower do we need for the ttg? the f-22as and f-35as both have enough. vfa-147, you'll target and engage the su-35s with your f-35s. can you assess? we can assess after we take them out, yes. okay, 7fs will target and engage the j-11s and jh-7s—can the f-22as assess? no, we'll need
+Pred:  v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-
+
+Ref: someone else to do that. what kind of visual range do the b-1bs have? enough to see a wreckage on the water? yeah, that should be fine. okay, then 34bs will do assessment for the j-11s and jh-7s. who is going to handle the ch-sa-21? vfa-147 can take the ch-sa-21 with the f-35s, and cvw-5 can do the f2t.
+Pred:  v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-
+

@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Union
 import torch
 from dataclasses import dataclass
 import evaluate
-from jiwer import process_words, wer_default
+from jiwer import process_words, wer_default, wer
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -48,28 +48,32 @@ def remove_symbols_and_diacritics(s: str, keep=""):
     Replace any other markers, symbols, and punctuations with a space, and drop any diacritics (category 'Mn' and some
     manual mappings)
     """
+    
+    return s
 
-    def replace_character(char):
-        if char in keep:
-            return char
-        elif char in ADDITIONAL_DIACRITICS:
-            return ADDITIONAL_DIACRITICS[char]
+    # def replace_character(char):
+    #     if char in keep:
+    #         return char
+    #     elif char in ADDITIONAL_DIACRITICS:
+    #         return ADDITIONAL_DIACRITICS[char]
 
-        elif unicodedata.category(char) == "Mn":
-            return ""
+    #     elif unicodedata.category(char) == "Mn":
+    #         return ""
 
-        elif unicodedata.category(char)[0] in "MSP":
-            return " "
+    #     elif unicodedata.category(char)[0] in "MSP":
+    #         return " "
 
-        return char
+    #     return char
 
-    return "".join(replace_character(c) for c in unicodedata.normalize("NFKD", s))
+    # return "".join(replace_character(c) for c in unicodedata.normalize("NFKD", s))
 
 def remove_symbols(s: str):
-    """
-    Replace any other markers, symbols, punctuations with a space, keeping diacritics
-    """
-    return "".join(" " if unicodedata.category(c)[0] in "MSP" else c for c in unicodedata.normalize("NFKC", s))
+    return s
+
+    # """
+    # Replace any other markers, symbols, punctuations with a space, keeping diacritics
+    # """
+    # return "".join(" " if unicodedata.category(c)[0] in "MSP" else c for c in unicodedata.normalize("NFKC", s))
 
 class BasicTextNormalizer:
     def __init__(self, remove_diacritics: bool = False, split_letters: bool = False):
@@ -157,62 +161,67 @@ class DataCollatorSpeechS2SWhitPadding:
 # metric    
 metric = evaluate.load('wer')
 
+from jiwer import wer
+from tqdm import tqdm
+import os
+
 def compute_wer(pred, args, prompts):
     pred_ids = pred.predictions
     label_ids = pred.label_ids
-    normalizer = BasicTextNormalizer()
     tokenizer = WhisperTokenizer.from_pretrained(f'openai/whisper-{args.model}', language='en', task='transcribe')
     
-    # label의 -100dmf pad token으로 변환
+    # Replace -100 (ignored tokens) with the pad token ID
     label_ids[label_ids == -100] = tokenizer.pad_token_id
-    total_wer = 0
-    results = []
     batch_size = args.per_device_eval_batch_size
+
     print("\n\nDone inference!")
     print("Start decoding and calculating WER...")
-    
+
     cutted_label_ids = []
     cutted_pred_ids = []
     
+    # Handle prompts to trim input if necessary
     if len(prompts) != 0:
-        for i in tqdm(range(0, len(pred_ids))):
-            cutted_pred_ids.append(pred_ids[i][len(prompts[i][0])+1:])
-            cutted_label_ids.append(label_ids[i][len(prompts[i][0])+1:])
-    
+        
+        for i in tqdm(range(len(pred_ids))):
+            cutted_pred_ids.append(pred_ids[i][len(prompts[i][0]) + 1:])
+            cutted_label_ids.append(label_ids[i][len(prompts[i][0]) + 1:])
+    else:
+        cutted_pred_ids = pred_ids
+        cutted_label_ids = label_ids
+
+    results = []
+
     for i in tqdm(range(0, len(cutted_pred_ids), batch_size)):
         batch_pred_ids = cutted_pred_ids[i:i + batch_size]
-        batch_label_ids = cutted_label_ids[i:i + batch_size]        
+        batch_label_ids = cutted_label_ids[i:i + batch_size]
 
         pre_strs = tokenizer.batch_decode(batch_pred_ids, skip_special_tokens=True)
         label_strs = tokenizer.batch_decode(batch_label_ids, skip_special_tokens=True)
-        # pre_strs, label_strs = zip(*[(normalizer(pred), normalizer(label)) for pred, label in zip(pre_strs, label_strs) if label != 'ignore_time_segment_in_scoring'])
-        
+
         filtered_pre_strs = []
         filtered_label_strs = []
 
         for pred, label in zip(pre_strs, label_strs):
             if label != 'ignore_time_segment_in_scoring':
-                # 'ignore_time_segment_in_scoring'이 아닌 경우에만 리스트에 추가
-                filtered_pre_strs.append(normalizer(pred))
-                filtered_label_strs.append(normalizer(label))
+                filtered_pre_strs.append(pred)
+                filtered_label_strs.append(label)
 
-        # 최종적으로 필터링된 리스트를 다시 튜플로 변환
         if filtered_pre_strs and filtered_label_strs:
-                pre_strs, label_strs = zip(*zip(filtered_pre_strs, filtered_label_strs))
-        else:
-            pre_strs, label_strs = (), ()
-        results.extend(zip(label_strs, pre_strs))
-        
-    # 파일에 모든 결과를 한 번에 쓰기
+            results.extend(zip(filtered_label_strs, filtered_pre_strs))
+
+    # Write results to file
     with open(os.path.join(args.output_dir, 'refs_and_pred.txt'), 'w') as f:
         for ref, pred in results:
-            f.write(f'Ref:{ref}\n')
-            f.write(f'Pred:{pred}\n\n')
+            f.write(f'Ref: {ref}\n')
+            f.write(f'Pred: {pred}\n\n')
 
-    # WER 계산
+    # Compute WER using `jiwer`
     pre_strs = [pred for _, pred in results]
     label_strs = [ref for ref, _ in results]
-    total_wer = 100 * metric.compute(predictions=pre_strs, references=label_strs)
+
+    total_wer = wer(label_strs, pre_strs) * 100
 
     return {'wer': total_wer}
+
 
