@@ -1,7 +1,7 @@
-Ref: 'isr assets confirm target at 35°15'n, 45°30'e,' said the jtac. 'cas is cleared hot,' added the awacs. pilots, remember: key your radios with the codeword 'raven.' ecm will jam at 1700 zulu; adjust ingress timing to meet tot at 1725.
+Ref: 'isr assets confirm target at 35ï¿½15'n, 45ï¿½30'e,' said the jtac. 'cas is cleared hot,' added the awacs. pilots, remember: key your radios with the codeword 'raven.' ecm will jam at 1700 zulu; adjust ingress timing to meet tot at 1725.
 Pred:  isr assets confirmed target at 35-2-15-N, 45-30-E, said the jtac. Cas is cleared hot, added the awacs. Pilots, remember, key your radios with the code word raven. ecm will jam at 1700 zulu, adjust ingress timing to meet tot at 1725.
 
-Ref: the recon rpa identified an ice storm—or maybe it was a nice, stable ao. either way, cas should proceed under the roe. if hostile troops are id'd, submit a 9-line cas request. ato lists all assets cleared for cas along the flot near obj eagle.
+Ref: the recon rpa identified an ice stormï¿½or maybe it was a nice, stable ao. either way, cas should proceed under the roe. if hostile troops are id'd, submit a 9-line cas request. ato lists all assets cleared for cas along the flot near obj eagle.
 Pred:  the recon rpa identified an ice storm, or maybe it was a nice, stable ao, either way, cas should proceed under the roe. if hostile troops are id, submit a nine-line cas request. ato lists all assets cleared for cas along the flot near obj eagle.
 
 Ref: colonel maddox briefed on op thunderstrike, highlighting the e-8c jstars tracking mtis near obj falcon. captain hargrove noted terrain masking south of mount hesper may interfere with jtac comms. recalibrate iff and tacan if comms degrade.
@@ -16,12 +16,21 @@ Pred:  We're taking a different route to minimize alr, ensuring rpa overwatch. T
 Ref: alright, uh, y'all listen up. we've got a couple jets ready for cas, so, uhhh, let's not waste time. isr reports enemy near the flot, but, uh, the ao's clear for now. if you see anything, hit your comms and, uh, confirm with the jtac before engaging, okay?
 Pred:  Alright, y'all listen up, we've got a couple jets ready for cas, so let's not waste time. ISR reports enemy near the flot, but the AO's clear for now. If you see anything, hit your comms and confirm with the JTAC before engaging, okay?
 
-Ref: sample transcript for f2t2tea: we have four enemy units to figure out f2t2s for. the expected ttg is going to be comprised of su-35s, j-11s, and possibly jh-7s. vaq-135, what do you have for that? we have three ea-18gs we can use for f2. great, then we'll put the ea-18gs on find and fix for the su-35s, and the e-7as in 2 sqn raaf for the j-11s. the vaq-141 can find the jh-7s if vaw-125 can then get a
-Pred:  sample transcript, we have four enemy units to figure out f2, 2s-4. The expected ttg is going to be comprised of su-35s, j-11s, and possibly jh-7s. vaq-135, what do you have for that? We have three ea-18g's we can use for f2. Great, then we'll put the ea-18g's on find and fix for the su-35s and the e7a's in two SQN RAF for the j-11s. The vaq-141 can find the jh-7s if v
+Ref: the manager said, 'budget cuts are unavoidable,' but added, 'we'll prioritize customer satisfaction.' he emphasized, 'our profit goal is $1.5 million.' still, the feedback forms read, 'this change feels rushed.'
+Pred:  The manager said budget cuts are unavoidable but added will prioritize customer satisfaction. He emphasized our profit goal is $1.5 million. Still, the feedback forms read, this change feels rushed.
 
-Ref: fix on them. vaw-125 can fix and track the jh-7s. still need someone to track the j-11s. 7fs can do that. sample transcript for f2t2tea: okay, what kind of firepower do we need for the ttg? the f-22as and f-35as both have enough. vfa-147, you'll target and engage the su-35s with your f-35s. can you assess? we can assess after we take them out, yes. okay, 7fs will target and engage the j-11s and jh-7s—can the f-22as assess? no, we'll need
-Pred:  v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-
+Ref: y'all aren't gonna believe what happened! that doggone tractor jus' up and broke down again. folks keep askin', 'why don'tcha get a new one?' well, lemme tell ya, fixin' it's cheaper than buyin'.
+Pred:  Y'all aren't going to believe what happened. That dog-on tractor just up and broke down again. Folks keep asking, why don't you get a new one? Well, let me tell you, fixing it's cheaper than buying.
 
-Ref: someone else to do that. what kind of visual range do the b-1bs have? enough to see a wreckage on the water? yeah, that should be fine. okay, then 34bs will do assessment for the j-11s and jh-7s. who is going to handle the ch-sa-21? vfa-147 can take the ch-sa-21 with the f-35s, and cvw-5 can do the f2t.
-Pred:  v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-1b, v-
+Ref: it's difficult to say whether its impact will last long-term. they're considering their options carefully, but we can't be sure. the sight of the site left everyone in awe, though, and we know it's memorable.
+Pred:  It's difficult to say whether its impact will last long term. They're considering their options carefully, but we can't be sure. The site of the site left everyone in awe though, and we know it's memorable.
+
+Ref: out of 250 participants, only 42 completed the survey within 48 hours. imagine earning $3,000, but spending $2,750 on essentials. after 90 days, you'll have less than $300 if your daily expenses are $15.
+Pred:  Out of 250 participants, only 42 completed the survey within 48 hours. Imagine earning $3,000 but spending $2,750 on Essentials. After 90 days, you'll have less than $300 if your daily expenses are $15.
+
+Ref: dr. adams's talk on the adams apple in relation to adams peak in sri lanka was fascinating. meanwhile, sophia's thesis discussed plato's academy near the acropolis. both ideas were presented at stanford's seminar.
+Pred:  Dr. Adams's talk on the Adams apple in relation to Adams peak in Sri Lanka was fascinating. Meanwhile, Sophia's thesis discussed Plato's academy near the Acropolis. Both ideas were presented at Stanford's seminar.
+
+Ref: i scream, you scream, we all scream for ice cream. if you think i saw a bear, you might misunderstandï¿½i saw a bare rock near the stream. the answer depends entirely on the way you phrase it.
+Pred:  I scream, you scream, we all scream for ice cream. If you think I saw a bear, you might misunderstand. I saw a bear rock near the stream. The answer depends entirely on the way you phrase it.
 
